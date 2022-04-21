@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+:root{
+    --ff: 'Barlow Semi Condensed', sans-serif;
+
+    --color-primary-800: hsl(219, 29%, 14%);
+    --color-primary-700: hsl(217, 19%, 35%);
+    --color-primary-500: hsl(263, 55%, 52%);
+    --color-primary-100: hsl(0, 0%, 100%);
+
+    --color-neutral-400: hsl(0, 0%, 81%);
+    --color-neutral-200: hsl(210, 46%, 95%);
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--ff);
+    font-size: 13px;
+}
+
+body{
+    background-color: var(--color-neutral-200);
+}
+
+main{
+    margin: 5rem 0;
+}
+
+.card{
+    border-radius: .5rem;
+    padding: 2rem;
+    width: 90%;
+    margin: 2rem auto;
+}
+.person{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.person img{
+    border-radius: 5rem;
+    width: 2rem;
+    height: auto;
+}
+.person-data{
+    margin-left: 1rem;
+}
+
+.person-name{
+    color: var(--color-neutral-400);
+}
+
+.person-verified{
+    color: var(--color-neutral-400);
+    opacity: 50%;
+}
+
+.short-desc{
+    color: var(--color-neutral-200);
+    font-size: 1.7rem;
+    margin: 1rem 0;
+}
+
+
+
+.long-desc{
+    color: var(--color-neutral-200);
+    opacity: 70%;
+}
+
+.card:nth-child(1){
+    background-color: var(--color-primary-500);
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top right 10%;
+}
+.card:nth-child(2){
+    background-color: var(--color-primary-700);
+}
+.card:nth-child(3){
+    background-color: var(--color-primary-100);
+}
+.card:nth-child(3) .short-desc,.card:nth-child(3) .long-desc, .card:nth-child(3) .person-name, .card:nth-child(3) .person-verified{
+    color: var(--color-primary-700);
+}
+.card:nth-child(4){
+    background-color: var(--color-primary-800);
+}
+.card:nth-child(5)
+{
+    background-color: var(--color-primary-100);
+}
+.card:nth-child(5) .short-desc,.card:nth-child(5) .long-desc, .card:nth-child(5) .person-name, .card:nth-child(5) .person-verified{
+    color: var(--color-primary-700);
+}
+
+
+@media (min-width: 750px){
+    body {
+        display: grid;
+        place-content: center;
+        height: 100%;
+    }
+    main{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        width: 90%; 
+        margin: 5rem auto;
+    }
+    .card{
+        margin: 0;
+        width: auto;
+    }
+
+    .grid-col-span2{
+        grid-column: span 2;
+    }
+    
+    .grid-row-span2{
+        grid-column: span 3;
+    }
+}
+
+@media (min-width: 1000px)
+{
+    body{
+        height: 100vh;
+    }
+
+    main{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .grid-col-span2{
+        grid-column: span 2;
+    }
+    .grid-row-span2{
+        grid-column-start: 4;
+        grid-row-start: 1;
+        grid-row-end: span 2;
+    }
+}
